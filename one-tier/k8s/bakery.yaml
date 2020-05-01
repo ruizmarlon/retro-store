@@ -51,7 +51,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: bakery
+              serviceName: bakery-service
               servicePort: 80
 
   
