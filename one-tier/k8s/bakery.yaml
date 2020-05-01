@@ -44,7 +44,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: pacman
+  name: bakery
 spec:
   rules:
     - host: bakery.launch.kube.webinar.mirantis-demos.mirantis.com
