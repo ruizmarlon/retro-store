@@ -34,12 +34,13 @@ metadata:
   labels:
     name: bakery-service
 spec:
+  type: ClusterIP
   ports:
     - port: 80
+      targetPort: 8080
+      protocol: TCP
   selector:
-    app: bakery
-  # type: LoadBalancer
-  type: ClusterIP
+    name: bakery
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
