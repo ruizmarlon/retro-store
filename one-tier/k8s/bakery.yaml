@@ -42,7 +42,7 @@ spec:
   type: NodePort
 ---
 apiVersion: extensions/v1beta1
-kind: Ingress
+kind: VirtualService
 metadata:
   name: bakery
 spec:
