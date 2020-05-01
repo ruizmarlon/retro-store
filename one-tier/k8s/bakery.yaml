@@ -41,26 +41,17 @@ spec:
   # type: LoadBalancer
   type: NodePort
 ---
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
+apiVersion: extensions/v1beta1
+kind: Ingress
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"pacman","namespace":"launch"},"spec":{"gateways":["istio-system/demo-gateway"],"hosts":["pacman-nodejs.launch.kube.webinar.mirantis-demos.mirantis.com"],"http":[{"match":[{"uri":{"prefix":"/"}}],"route":[{"destination":{"host":"pacman","port":{"number":80}}}]}]}}
-  generation: 1
-  name: bakery
-  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/bakery/virtualservices/bakery
+  name: pacman
 spec:
-  gateways:
-  - istio-system/demo-gateway
-  hosts:
-  - bakery.launch.kube.webinar.mirantis-demos.mirantis.com
-  http:
-  - match:
-    - uri:
-        prefix: /
-    route:
-    - destination:
-        host: bakery
-        port:
-          number: 80
+  rules:
+    - host: bakery.launch.kube.webinar.mirantis-demos.mirantis.com
+      http:
+        paths:
+          - backend:
+              serviceName: bakery
+              servicePort: 80
+
+  
