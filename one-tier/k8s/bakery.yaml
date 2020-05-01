@@ -39,7 +39,7 @@ spec:
   selector:
     app: bakery
   # type: LoadBalancer
-  type: NodePort
+  type: ClusterIP
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
