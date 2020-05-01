@@ -49,7 +49,7 @@ metadata:
       {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"pacman","namespace":"launch"},"spec":{"gateways":["istio-system/demo-gateway"],"hosts":["pacman-nodejs.launch.kube.webinar.mirantis-demos.mirantis.com"],"http":[{"match":[{"uri":{"prefix":"/"}}],"route":[{"destination":{"host":"pacman","port":{"number":80}}}]}]}}
   generation: 1
   name: bakery
-  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/launch/virtualservices/pacman
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/bakery/virtualservices/bakery
 spec:
   gateways:
   - istio-system/demo-gateway
