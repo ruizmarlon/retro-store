@@ -48,6 +48,7 @@ metadata:
   name: bakery
 spec:
   rules:
+    - gateway: istio-system/demo-gateway
     - host: bakery.launch.kube.webinar.mirantis-demos.mirantis.com
       http:
         paths:
