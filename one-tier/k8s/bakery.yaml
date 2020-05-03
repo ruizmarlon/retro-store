@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: stevenfollis/bakery:web
+          image: dtr.webinar.mirantis-demos.mirantis.com/launch/bakery:2020.05.01 #stevenfollis/bakery:web
       # tolerations:
       #   - key: "os"
       #     operation: "equal"
