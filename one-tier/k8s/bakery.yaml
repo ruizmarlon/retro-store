@@ -34,10 +34,10 @@ metadata:
   labels:
     name: bakery-service
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 80
-      #targetPort: 8080
+      #targetPort: 80
       #protocol: TCP
   selector:
     app: bakery
@@ -47,13 +47,18 @@ kind: VirtualService
 metadata:
   name: bakery
 spec:
-  rules:
-    - gateway: istio-system/demo-gateway
-    - host: bakery.launch.kube.webinar.mirantis-demos.mirantis.com
-      http:
-        paths:
-          - backend:
-              serviceName: bakery-service
-              servicePort: 80
+  hosts:
+    - bakery.launch.kube.webinar.mirantis-demos.mirantis.com
+  gateways:
+    - istio-system/demo-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: bakery-service
+            port:
+              number: 80
 
   
