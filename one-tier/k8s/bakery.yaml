@@ -17,15 +17,9 @@ spec:
     spec:
       containers:
         - name: web
-          image: dtr.webinar.mirantis-demos.mirantis.com/launch/bakery:2020.05.01 #stevenfollis/bakery:web
-      # tolerations:
-      #   - key: "os"
-      #     operation: "equal"
-      #     value: "windows"
-      #     effect: "NoSchedule"
+          image: dtr.webinar.mirantis-demos.mirantis.com/launch/bakery:2020.05.01
       nodeSelector:
         beta.kubernetes.io/os: windows
-        # node.kubernetes.io/windows-build: "10.0.17763" # Use starting in K8S v1.17
 ---
 apiVersion: v1
 kind: Service
@@ -37,8 +31,6 @@ spec:
   type: ClusterIP
   ports:
     - port: 80
-      #targetPort: 80
-      #protocol: TCP
   selector:
     app: bakery
 ---
