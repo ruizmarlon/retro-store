@@ -1,8 +1,8 @@
 variables:
   DOCKER_REGISTRY_FQDN: 52.247.60.23
-  DOCKER_REGISTRY_IMAGE: 52.247.60.23/apps/bakery
-  K8S_NAMESPACE: bakery
-  K8S_DEPLOYMENT: bakery-deployment
+  DOCKER_REGISTRY_IMAGE: 52.247.60.23/apps/retro-store
+  K8S_NAMESPACE: retro-store
+  K8S_DEPLOYMENT: retro-store-deployment
   K8S_CONTAINER: web
   
 trigger:

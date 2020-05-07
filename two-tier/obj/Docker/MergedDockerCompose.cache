@@ -5,7 +5,7 @@ networks:
 services:
   database:
     build:
-      context: c:\users\steven\documents\visual studio 2017\Projects\Bakery\Database
+      context: c:\users\steven\documents\visual studio 2017\Projects\retro-store\Database
       dockerfile: Dockerfile
     environment:
       ACCEPT_EULA: "Y"
@@ -13,7 +13,7 @@ services:
     image: database
   webapplication:
     build:
-      context: c:\users\steven\documents\visual studio 2017\Projects\Bakery\WebApplication
+      context: c:\users\steven\documents\visual studio 2017\Projects\retro-store\WebApplication
       dockerfile: Dockerfile
     depends_on:
     - database

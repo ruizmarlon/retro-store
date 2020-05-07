@@ -1,7 +1,7 @@
 #escape=`
 
-# docker build --tag foo/bakery:web .; 
-# docker run -it --rm --name bakery -p 3000:80 foo/bakery:web
+# docker build --tag foo/retro-store:web .; 
+# docker run -it --rm --name retro-store -p 3000:80 foo/retro-store:web
 
 # Use the ASP.NET 4.8 base image from Microsoft
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
@@ -20,7 +20,7 @@ RUN Remove-Website -Name 'Default Web Site';
 
 # Create new IIS site
 RUN New-Website `
-  -Name 'bakery' `
+  -Name 'retro-store' `
   -Port 80 `
   -PhysicalPath 'C:\app' `
   -ApplicationPool 'DefaultAppPool';

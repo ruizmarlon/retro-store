@@ -6,7 +6,7 @@
 @{
     Page.Title = "Place Your Order";
 
-    var db = Database.Open("bakery");
+    var db = Database.Open("retro-store");
     var productId = UrlData[0].AsInt();
     var product = db.QuerySingle("SELECT * FROM PRODUCTS WHERE ID = @0", productId);
 

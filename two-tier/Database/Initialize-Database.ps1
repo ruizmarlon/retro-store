@@ -18,10 +18,10 @@ if ($sa_password -ne "_") {
 }
 
 # Attach data files if they exist: 
-$mdfPath = 'c:\database\BakeryDB_Primary.mdf'
+$mdfPath = 'c:\database\retro-storeDB_Primary.mdf'
 if ((Test-Path $mdfPath) -eq $true) {
-    $sqlcmd = "CREATE DATABASE BakeryDB ON (FILENAME = N'$mdfPath')"
-    $ldfPath = 'c:\database\BakeryDB_Primary.ldf'
+    $sqlcmd = "CREATE DATABASE retro-storeDB ON (FILENAME = N'$mdfPath')"
+    $ldfPath = 'c:\database\retro-storeDB_Primary.ldf'
     if ((Test-Path $mdfPath) -eq $true) {
         $sqlcmd =  "$sqlcmd, (FILENAME = N'$ldfPath')"
     }
@@ -38,11 +38,11 @@ $SqlPackagePath = 'C:\Microsoft.Data.Tools.Msbuild.10.0.61708.210\lib\net46\SqlP
 	/op:create.sql `
 	/p:CommentOutSetVarDeclarations=true `
     /tsn:.\SQLEXPRESS `
-	/tdn:BakeryDB `
+	/tdn:retro-storeDB `
 	/tu:sa `
 	/tp:$sa_password 
 
-$SqlCmdVars = "DatabaseName=BakeryDB", "DefaultFilePrefix=BakeryDB", "DefaultDataPath=c:\database\", "DefaultLogPath=c:\database\"  
+$SqlCmdVars = "DatabaseName=retro-storeDB", "DefaultFilePrefix=retro-storeDB", "DefaultDataPath=c:\database\", "DefaultLogPath=c:\database\"  
 Invoke-Sqlcmd -InputFile create.sql -Variable $SqlCmdVars -Verbose
 Write-Verbose "Deployed dacpac"
 

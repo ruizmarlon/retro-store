@@ -2,45 +2,45 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: bakery
-  name: bakery-deployment
+    app: retro-store
+  name: retro-store-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: bakery
+      app: retro-store
   template:
     metadata:
       labels:
-        app: bakery
-      name: bakery
+        app: retro-store
+      name: retro-store
     spec:
       containers:
         - name: web
-          image: dtr.webinar.mirantis-demos.mirantis.com/launch/bakery:2020.05.01
+          image: dtr.webinar.mirantis-demos.mirantis.com/launch/retro-store:2020.05.01
       nodeSelector:
         beta.kubernetes.io/os: windows
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bakery-service
+  name: retro-store-service
   labels:
-    name: bakery-service
+    name: retro-store-service
 spec:
   type: ClusterIP
   ports:
     - port: 80
   selector:
-    app: bakery
+    app: retro-store
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: bakery
+  name: retro-store
 spec:
   hosts:
-    - bakery.launch.kube.webinar.mirantis-demos.mirantis.com
+    - retro-store.launch.kube.webinar.mirantis-demos.mirantis.com
   gateways:
     - istio-system/demo-gateway
   http:
@@ -49,7 +49,7 @@ spec:
             prefix: /
       route:
         - destination:
-            host: bakery-service
+            host: retro-store-service
             port:
               number: 80
 

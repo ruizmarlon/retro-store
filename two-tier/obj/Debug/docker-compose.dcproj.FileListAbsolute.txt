@@ -1,1 +1,1 @@
-c:\users\steven\documents\visual studio 2017\Projects\Bakery\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+c:\users\steven\documents\visual studio 2017\Projects\retro-store\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

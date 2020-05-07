@@ -1,4 +1,4 @@
-USE [BakeryDB]
+USE [retro-storeDB]
 GO
 
 INSERT INTO [dbo].[Products]
@@ -33,7 +33,7 @@ INSERT INTO [dbo].[Products]
            ,'pear_tart.jpg'),
 
 		   ('Chocolate Cake'
-           ,'Rich chocolate frosting cover this chocolate lover’s dream.'
+           ,'Rich chocolate frosting cover this chocolate loverï¿½s dream.'
            ,8.99
            ,'chocolate_cake.jpg')
 GO

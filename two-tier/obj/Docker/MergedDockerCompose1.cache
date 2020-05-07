@@ -7,7 +7,7 @@ services:
     build:
       args:
         source: obj/Docker/publish/
-      context: c:\users\steven\documents\visual studio 2017\Projects\Bakery\Database
+      context: c:\users\steven\documents\visual studio 2017\Projects\retro-store\Database
       dockerfile: Dockerfile
     entrypoint: cmd /c "start /B C:\\ServiceMonitor.exe w3svc & C:\\remote_debugger\\x64\\msvsmon.exe
       /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn
@@ -26,7 +26,7 @@ services:
     build:
       args:
         source: obj/Docker/publish/
-      context: c:\users\steven\documents\visual studio 2017\Projects\Bakery\WebApplication
+      context: c:\users\steven\documents\visual studio 2017\Projects\retro-store\WebApplication
       dockerfile: Dockerfile
     depends_on:
     - database
