@@ -100,7 +100,10 @@ nav ul {
     }
 
 .site-title a {
-    background: transparent url(../Images/brand.png) no-repeat;
+    /*---LOGO CHANGE HERE ---*/
+    /*background: transparent url(../Images/brand.png) no-repeat;*/
+    background: transparent url(../Images/brand.png) no-repeat; 
+    background: transparent url("https://my-images-blah.s3.us-east-2.amazonaws.com/mirantis-logo2c.png") no-repeat;
     float: left;
     height: 50px;
     margin: 15px;
