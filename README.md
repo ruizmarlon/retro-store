@@ -1,4 +1,4 @@
-# FourthCoffee Application
+# RetroStore Application
 
 ## Sample ASP.NET application running with Windows Containers
 
