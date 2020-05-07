@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: dtr.webinar.mirantis-demos.mirantis.com/launch/retro-store:2020.05.01
+          image: dtr.webinar.mirantis-demos.mirantis.com/launch/retro-store:2020.05.07.dc5e90e
       nodeSelector:
         beta.kubernetes.io/os: windows
 ---
