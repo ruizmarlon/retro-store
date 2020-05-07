@@ -1,7 +1,7 @@
 #escape=`
 
 # docker build --tag foo/retro-store:web .; 
-# docker run -it --rm --name retro-store -p 3000:80 foo/retro-store:web
+# docker run -it --rm --name retro-store --publish 3000:80 foo/retro-store:web
 
 # Use the ASP.NET 4.8 base image from Microsoft
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
