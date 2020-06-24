@@ -40,7 +40,7 @@ metadata:
   name: retro-store
 spec:
   hosts:
-    - retro-store.launch.kube.webinar.mirantis-demos.mirantis.com
+    - retro-store.dev.dkramer.kube.us.demo.mirantis.com
   gateways:
     - istio-system/demo-gateway
   http:
