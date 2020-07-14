@@ -1,7 +1,7 @@
 variables:
   DOCKER_REGISTRY_FQDN: dtr.us.demo.mirantis.com
-  DOCKER_REGISTRY_IMAGE: dtr.us.demo.mirantis.com/dkramer-dev/retro-store
-  K8S_NAMESPACE: retro-store
+  DOCKER_REGISTRY_IMAGE: dtr.us.demo.mirantis.com/mruiz-dev/retro-store
+  K8S_NAMESPACE: mruiz-dev
   K8S_DEPLOYMENT: retro-store-deployment
   K8S_CONTAINER: web
   
