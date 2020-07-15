@@ -48,7 +48,7 @@ stages:
               
               # Restart Docker to reload configuration
               Restart-Service docker;
-            displayName: "Ignore Registry"
+            displayName: "Allow nondistributable artifacts push to Registry"
 
           - powershell: |
               # Login to the Docker Trusted Registry
