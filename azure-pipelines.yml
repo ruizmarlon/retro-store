@@ -39,14 +39,12 @@ stages:
             displayName: "Get Docker Version"
           
           - powershell: |
-              Write-Host "Set insecure registry in daemon configuration";
+              Write-Host "Set allow-nondisrtibutable-artifacts";
               
               # Create a daemon.json configuration file with the insecure registry listed
               Set-Content `
                 -Path $env:ProgramData\docker\config\daemon.json `
                 -Value $('{{"allow-nondistributable-artifacts": ["{0}"]}}' -f $env:DOCKER_REGISTRY_FQDN);
-               # -Value $('{{"insecure-registries": ["{0}"]}}' -f $env:DOCKER_REGISTRY_FQDN);
-               # -Value $('{{"allow-nondistributable-artifacts": ["{0}"]}}' -f $env:DOCKER_REGISTRY_FQDN);
               
               # Restart Docker to reload configuration
               Restart-Service docker;
