@@ -45,7 +45,7 @@ stages:
               Set-Content `
                 -Path $env:ProgramData\docker\config\daemon.json `
                 -Value $('{{"insecure-registries": ["{0}"]}}' -f $env:DOCKER_REGISTRY_FQDN);
-                -Value $('{{"allow-nondistributable-artifacts": ["{0}"]}}' -f $env:DOCKER_REGISTRY_FQDN);
+                -Value $('{{"allow-nondistributable-artifacts": ["$env:DOCKER_REGISTRY_FQDN"]}}');
               
               # Restart Docker to reload configuration
               Restart-Service docker;
